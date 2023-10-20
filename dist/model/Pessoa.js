@@ -95,6 +95,13 @@ class Pessoa {
     comerPrato(_prato) {
         console.log(`${this.nome} está comendo ${_prato}`);
     }
+    /**CRUD
+     *
+     */
+    cadastroPessoa(pessoa) {
+        //persistindo os dados
+        console.log(`${pessoa.nome} cadastrado com sucesso`);
+    }
 }
 exports.Pessoa = Pessoa;
 //# sourceMappingURL=Pessoa.js.map

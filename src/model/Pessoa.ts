@@ -1,4 +1,6 @@
 export class Pessoa {
+
+    // atributos da classe
     private nome: string;
     private cpf: string;
     private data_nascimento: Date;
@@ -7,119 +9,131 @@ export class Pessoa {
     private altura: number;
     private peso: number;
 
-    public constructor(_nome: string, _cpf: string, _data_nascimento: Date, _telefone: string, _endereco: string, _altura: number, _peso: number){
-        this.nome = _nome;
-        this.cpf = _cpf;
-        this.data_nascimento = _data_nascimento;
-        this.telefone = _telefone;
-        this.endereco = _endereco;
-        this.altura = _altura;
-        this.peso = _peso;
+    //método construtor
+    public constructor (_nome: string, _cpf: string, _data_nascimento: Date, _telefone: string, _endereco: string, _altura: number, _peso: number) {
+            this.nome = _nome;
+            this.cpf = _cpf;
+            this.data_nascimento = _data_nascimento;
+            this.telefone = _telefone;
+            this.endereco = _endereco;
+            this.altura = _altura;
+            this.peso = _peso;
     }
 
+    // métodos GETTERS and SETTERS
     /**
+     * Retorna o nome da pessoa
      * 
-     * @returns 
+     * @returns nome : nome da pessoa
      */
-    public getNome(){
+    public getNome() {  
         return this.nome;
     }
 
     /**
+     * Atribui o parâmetro ao atributo nome
      * 
-     * @param _nome 
+     * @param _nome : nome da pessoa
      */
-    public setNome(_nome: string){
+    public setNome(_nome: string){  
         this.nome = _nome;
     }
 
-    public getCPF(){
+    /**
+     * Retorna o CPF da pessoa
+     * 
+     * @returns cpf : cpf da pessoa 
+     */
+    public getCPF() {
         return this.cpf;
     }
 
-    public setCPF(_cpf: string){
+    public setCPF(_cpf: string) {
         this.cpf = _cpf;
     }
 
-    public getData_Nascimento(){
+    public getDataNascimento() {
         return this.data_nascimento;
     }
 
-    public setData_Nascimento(_data_nascimento: Date){
+    public setDataNascimento(_data_nascimento: Date) {
         this.data_nascimento = _data_nascimento;
     }
 
-    public getTelefone(){
+    public getTelefone() {
         return this.telefone;
     }
 
-    public setTelefone(_telefone: string){
+    public setTelefone(_telefone: string) {
         this.telefone = _telefone;
     }
 
-    public getEndereco(){
+    public getEndereco() {
         return this.endereco;
     }
 
-    public setEndereco(_endereco: string){
+    public setEndereco(_endereco: string) {
         this.endereco = _endereco;
     }
 
-    public getAltura(){
+    public getAltura() {
         return this.altura;
     }
 
-    public setAltura(_altura: number){
+    public setAltura(_altura: number) {
         this.altura = _altura;
     }
 
-    public getPeso(){
+    public getPeso() {
         return this.peso;
     }
 
-    public setPeso(_peso: number){
+    /**
+     * Atribui peso a pessoa
+     * 
+     * @param _peso
+     *  peso da pessoa 
+     */
+    public setPeso(_peso: number) {
         this.peso = _peso;
     }
 
-    public mostraPessoa(){
+    public mostraPessoa() {
         console.log(`Nome: ${this.nome}
-            CPF: ${this.cpf}
-            Data: ${this.data_nascimento}
-            Telefone: ${this.telefone}
-            Endereço: ${this.endereco}
-            Altura: ${this.altura}
-            Peso: ${this.peso}`);
+        CPF: ${this.cpf}
+        Data de nascimento: ${this.data_nascimento.getUTCDate()}/${this.data_nascimento.getMonth()}/${this.data_nascimento.getFullYear()}
+        Telefone: ${this.telefone}
+        Endereço: ${this.endereco}
+        Altura: ${this.altura}
+        Peso: ${this.peso}`);
     }
 
-    public falar(): void{
-        console.log(`${this.nome} está falando`);
+    // implementar os métodos
+    public falar():void {
+        // lógica de negócio
+        console.log(`${this.nome} está falando...`);
     }
 
-    public falarFrase(_frase: string): void{
-        console.log(`${this.nome} fala ${_frase}`);
+    public falarFrase(_frase: string):void {
+        //lógica de negócio
+        console.log(`${this.nome} fala: ${_frase}`);
     }
 
-    public andar(): void{
-        console.log(`${this.nome} está andando`);
+    public andar():void {
+        console.log(`${this.nome} está andando...`);
     }
 
-    public andarQuilometros(_quilometros: number): void{
-        console.log(`${this.nome} andou ${_quilometros} quilometros`);
+    public andarQuilometros(quilometros: number):void {
+        setTimeout(() => {
+            console.log(`${this.nome} caminhou ${quilometros} quilometros`);
+        }, 3000);
     }
 
-    public comer(): void{
-        console.log(`${this.nome} está comendo`);
+    public comer(): void {
+        console.log(`${this.nome} está comendo...`);
     }
 
-    public comerPrato(_prato: string): void{
-        console.log(`${this.nome} está comendo ${_prato}`);
-    }
-
-    /**CRUD
-     * 
-     */
-    cadastroPessoa(pessoa: Pessoa) {
-        //persistindo os dados
-        console.log(`${pessoa.nome} cadastrado com sucesso`);
+    public comerPrato(prato: string):void {
+        console.log(`${this.nome} está comendo ${prato}`);
     }
 }
